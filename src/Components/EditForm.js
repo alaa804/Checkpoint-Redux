@@ -29,6 +29,8 @@ const EditForm = ({oldTodo , editTask}) => {
  const handleSubmit = (e) => {
    e.preventDefault();
    const newTask = {...oldTodo , text : text}
+   if(! text.trim() ) return ;
+  
    editTask(newTask)
    toggleModal();
  }

@@ -50,12 +50,12 @@ button:hover {
   padding: 1rem;
   background-color: #59718f;
   text-align: center;
-  box-shadow: 2px 2px 12px 0px rgba(156, 44, 44, 0.248);
+  box-shadow: 2px 2px 12px 0px rgba(146, 20, 20, 0.248);
 }
 
 .filter-form {
   padding: 1rem;
-  background-color: #c5d0dd3b;
+  background-color: #c5ddd73b;
   border-top: none;
 }
 .filter-form > label {
@@ -82,3 +82,6 @@ button:hover {
     "Lucida Sans", Arial, sans-serif;
 }
 
+form  :hover {
+  color : rgba(65, 233, 32, 0.459)
+}

@@ -1,22 +1,24 @@
-import {ADD_TODO , REMOVE_TODO , TOGGLE_COMPLETE , EDIT_TASK} from '../const';
+import {ADD_TODO , REMOVE_TODO , TOGGLE_COMPLETE , EDIT_TASK, FILTER_TASKS} from '../const';
 
 
 const initState = {
     todos : [ {text : "learn Node js in GomyCode" , isComplete : false , id : 0} ],
-
+    filterTask: "no-filter", // ["no-filter" , "done" ,"undone"]
 }
 
 export default function (state = initState , action) {
 
 switch(action.type){
     case ADD_TODO : 
-    return {...state , todos : [action.payload , ...state.todos]};
+      return {...state , todos : [action.payload , ...state.todos]};
     case REMOVE_TODO : 
-    return {...state , todos : state.todos.filter((todo) => todo.id !== action.payload)};
+      return {...state , todos : state.todos.filter((todo) => todo.id !== action.payload)};
     case  TOGGLE_COMPLETE :
-    return {...state , todos : state.todos.map((todo) => todo.id === action.payload ? {...todo , isComplete : !todo.isComplete} : todo )};
+      return {...state , todos : state.todos.map((todo) => todo.id === action.payload ? {...todo , isComplete : !todo.isComplete} : todo )};
     case EDIT_TASK :
-    return {...state , todos : state.todos.map((todo) => todo.id === action.payload.id ? action.payload : todo)}
+      return {...state , todos : state.todos.map((todo) => todo.id === action.payload.id ? action.payload : todo)}
+    case FILTER_TASKS:
+      return { ...state, filterTask: action.payload };
     default : 
     return state ;
 }

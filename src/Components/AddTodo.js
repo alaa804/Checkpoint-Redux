@@ -14,6 +14,7 @@ const handleSubmit = e => {
     id : Date.now(),
     isComplete : false ,
   }
+  if (! text.trim()) return ;
   addTodo(newTodo)
   setText("")
 }
@@ -32,5 +33,6 @@ const handleSubmit = e => {
     </div>
   )
 }
+
 
 export default connect(null , {addTodo}) (AddTodo)

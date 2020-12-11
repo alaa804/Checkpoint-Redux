@@ -1,4 +1,4 @@
-import {ADD_TODO , REMOVE_TODO , TOGGLE_COMPLETE , EDIT_TASK} from '../const';
+import {ADD_TODO , REMOVE_TODO , TOGGLE_COMPLETE , EDIT_TASK, FILTER_TASKS} from '../const';
 
 
 
@@ -25,3 +25,8 @@ export const editTask = (editedTask) => ({
     type : EDIT_TASK , 
     payload : editedTask ,
 });
+
+export const filterTask = (str) => ({
+    type: FILTER_TASKS,
+    payload: str,
+  });
